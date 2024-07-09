@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sm-style.css">
 </head>
 
 <body>
     <div class="img-container">
         <img id="background-img" src="assets/bg.png" alt="background image">
-        <h1 id="first-message">How Boost Works</h1>
+        <h1 id="first-message">How Boost Work?</h1>
         <h1 class="message" id="second-message">Outside Antenna recieves signals from cell tower</h1>
         <h1 class="message" id="third-message">Booster amplifies the signal strength</h1>
         <h1 class="message" id="fourth-message">Inside antenna sends improved signals to your phone</h1>
@@ -26,16 +27,45 @@
 
             <p class="message-trigger">For space</p>
             <p class="message-trigger">For space</p>
-            
+
         </div>
 
     </div>
+
+    <!-- For small Devices => -->
+    <div class="sm-container">
+
+        <div class="sm-img-container">
+            <img id="sm-background-img" src="assets/bg.png" alt="background image">
+            <h1 id="sm-first-message">How Boost Works?</h1>
+            <h1 class="sm-message" id="sm-second-message">Outside Antenna recieves signals from cell tower</h1>
+            <h1 class="sm-message" id="sm-third-message">Booster amplifies the signal strength</h1>
+            <h1 class="sm-message" id="sm-fourth-message">Inside antenna sends improved signals to your phone</h1>
+            <div class="sm-shadow"></div>
+            <div class="sm-img-container-trigger">
+                <p>Test message</p>
+                <p class="sm-message-trigger" id="sm-second-message-trigger">Second message trigger</p>
+                <p class="sm-message-trigger" id="sm-third-message-trigger">Second message trigger</p>
+                <p class="sm-message-trigger" id="sm-fourth-message-trigger">Second message trigger</p>
+                <p class="sm-message-trigger" id="sm-end-trigger">End Trigger</p>
+                <p class="sm-message-trigger" id="sm-complete-end-trigger">Complete End trigger</p>
+
+                <p class="sm-message-trigger">For space</p>
+                <p class="sm-message-trigger">For space</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
     <div class="bottom-space"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
+    <script src="sm-main.js"></script>
 </body>
 
 </html>

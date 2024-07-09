@@ -15,8 +15,11 @@ html {
     width: 100vw;
     position: relative;
     height: 51.5vw;
+    /* height: 44.5vw; */
     overflow: hidden;
-    display: flex;
+    display: none;
+
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -25,7 +28,7 @@ html {
     color: #ffffff;
     /* top: 40%; */
     /* left: 30%; */
-    z-index: 1000;
+    z-index: 500;
     position: absolute;
     font-size: 3rem;
     font-family: "Manrope", sans-serif;
@@ -46,7 +49,7 @@ html {
 #second-message {
     width: 25rem;
     top: 10%;
-    left: 44%;
+    right: 25%;
     font-size: 1.5rem;
 }
 
@@ -58,19 +61,27 @@ html {
 }
 
 #fourth-message {
-    backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(1px); */
     width: 23rem;
     top: 33%;
-    left: 56%;
+    right: 10%;
     font-size: 1.5rem;
 }
+
+/* @media screen and (max-width: 850px) {
+    #fourth-message {
+        top: 33%;
+        left: 56%;
+        font-size: 1.5rem;
+    }
+} */
 
 .img-container-trigger {
     width: 100vw;
     height: 51.5vw;
     position: absolute;
     overflow-y: scroll;
-    z-index: 200;
+    z-index: 600;
     top: 0;
     overflow-x: hidden;
 }

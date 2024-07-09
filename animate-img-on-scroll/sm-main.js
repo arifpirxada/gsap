@@ -1,13 +1,26 @@
 if (gsap) {
 
-    gsap.to("#first-message", {
+    gsap.from("#sm-first-message", {
         opacity: 0,
-        delay: 3,
+        y: -200,
+        duration: 0.5,
         scrollTrigger: {
-            trigger: ".img-container",
-            start: "top 20%",
+            trigger: ".sm-img-container",
+            start: "top 40%",
             end: "bottom -100%",
             markers: false,
+            // once: true
+        }
+    })
+
+    gsap.to("#sm-first-message", {
+        opacity: 0,
+        delay: 2,
+        scrollTrigger: {
+            trigger: ".sm-img-container",
+            start: "top 20%",
+            end: "bottom -100%",
+            markers: false, 
         },
         onComplete: () => {
             // hide h1
@@ -16,25 +29,23 @@ if (gsap) {
     })
 
     // Second message
-    gsap.to(".shadow", {
+    gsap.to(".sm-shadow", {
         x: "15%",
         y: "25%",
         rotate: 55,
-        yoyo: true,
         scrollTrigger: {
-            scroller: ".img-container-trigger",
-            trigger: "#second-message-trigger",
+            scroller: ".sm-img-container-trigger",
+            trigger: "#sm-second-message-trigger",
             start: "top -10%",
             end: "bottom bottom",
             scrub: 1,
             markers: false,
-            pin: true
+            pin: true  
         },
         onStart: () => {
             // Display second text =>
-            document.getElementById("second-message").style.display = "block"
-            gsap.from("#second-message", {
-                yoyo: true,
+            document.getElementById("sm-second-message").style.display = "block"
+            gsap.from("#sm-second-message", {
                 delay: 0.5,
                 x: 80,
                 y: -60,
@@ -43,13 +54,12 @@ if (gsap) {
 
             // Check if heading is already present =>
 
-            if (document.getElementById("first-message").style.display != "none") {
-                gsap.to("#first-message", {
+            if (document.getElementById("sm-first-message").style.display != "none") {
+                gsap.to("#sm-first-message", {
                     opacity: 0,
-                    yoyo: true,
                     onComplete: () => {
                         // hide h1
-                        document.getElementById("first-message").style.display = "none"
+                        document.getElementById("sm-first-message").style.display = "none"
                     }
                 })
             }
@@ -57,14 +67,13 @@ if (gsap) {
     })
 
     // Third message =>
-    gsap.to(".shadow", {
+    gsap.to(".sm-shadow", {
         x: "45%",
         y: "25%",
         rotate: 55,
-        yoyo: true,
         scrollTrigger: {
-            scroller: ".img-container-trigger",
-            trigger: "#third-message-trigger",
+            scroller: ".sm-img-container-trigger",
+            trigger: "#sm-third-message-trigger",
             start: "top -10%",
             end: "bottom center",
             scrub: 1,
@@ -74,17 +83,15 @@ if (gsap) {
         onStart: () => {
 
             // Hide second message =>
-            gsap.to("#second-message", {
+            gsap.to("#sm-second-message", {
                 opacity: 0,
-                yoyo: true,
                 onComplete: () => {
-                    document.getElementById("second-message").style.display = "none"
+                    document.getElementById("sm-second-message").style.display = "none"
                 }
             })
             // Display third text =>
-            document.getElementById("third-message").style.display = "block"
-            gsap.from("#third-message", {
-                yoyo: true,
+            document.getElementById("sm-third-message").style.display = "block"
+            gsap.from("#sm-third-message", {
                 delay: 0.5,
                 x: -70,
                 y: -60,
@@ -93,8 +100,7 @@ if (gsap) {
 
             // Change bg image position =>
 
-            gsap.to("#background-img", {
-                yoyo: true,
+            gsap.to("#sm-background-img", {
                 width: "220%",
                 marginLeft: "15%"
             })
@@ -102,14 +108,14 @@ if (gsap) {
     })
 
     // Fourth message =>
-    gsap.to(".shadow", {
+    gsap.to(".sm-shadow", {
         x: "95%",
         y: "20%",
         // rotate: 300,
         rotate: 50,
         scrollTrigger: {
-            scroller: ".img-container-trigger",
-            trigger: "#fourth-message-trigger",
+            scroller: ".sm-img-container-trigger",
+            trigger: "#sm-fourth-message-trigger",
             start: "top -10%",
             end: "bottom center",
             scrub: 1,
@@ -118,15 +124,15 @@ if (gsap) {
         },
         onStart: () => {
             // Hide third message =>
-            gsap.to("#third-message", {
+            gsap.to("#sm-third-message", {
                 opacity: 0,
                 onComplete: () => {
-                    document.getElementById("third-message").style.display = "none"
+                    document.getElementById("sm-third-message").style.display = "none"
                 }
             })
             // Display third text =>
-            document.getElementById("fourth-message").style.display = "block"
-            gsap.from("#fourth-message", {
+            document.getElementById("sm-fourth-message").style.display = "block"
+            gsap.from("#sm-fourth-message", {
                 delay: 0.5,
                 x: -80,
                 y: -90,
@@ -135,7 +141,7 @@ if (gsap) {
 
             // Change bg image position =>
 
-            gsap.to("#background-img", {
+            gsap.to("#sm-background-img", {
                 width: "180%",
                 marginLeft: "-26%",
                 x: 0,
@@ -145,12 +151,12 @@ if (gsap) {
     })
 
     // End Trigger
-    gsap.to(".shadow", {
+    gsap.to(".sm-shadow", {
         x: "120%",
         opacity: 0,
         scrollTrigger: {
-            scroller: ".img-container-trigger",
-            trigger: "#end-trigger",
+            scroller: ".sm-img-container-trigger",
+            trigger: "#sm-end-trigger",
             start: "top -10%",
             end: "bottom center",
             scrub: 1,
@@ -161,33 +167,33 @@ if (gsap) {
             // Slide message =>
             // document.querySelector(".shadow").style.left = 'auto'
 
-            gsap.to("#fourth-message", {
+            gsap.to("#sm-fourth-message", {
                 x: 300,
                 opacity: 0,
                 onComplete: () => {
-                    document.getElementById("fourth-message").style.display = "none"
+                    document.getElementById("sm-fourth-message").style.display = "none"
                 }
             })
 
             // Change bg image position =>
-            gsap.to("#background-img", {
-                width: "100%",
+            gsap.to(".sm-img-container", {
+                width: "100vw",
                 marginLeft: "0%",
                 top: 0
             })
         },
         onComplete: () => {
-            document.querySelector(".shadow").style.display = "none"
+            document.querySelector(".sm-shadow").style.display = "none"
         }
     })
 
     // Complete End Trigger
-    gsap.to(".shadow", {
+    gsap.to(".sm-shadow", {
         x: 800,
         y: 20,
         scrollTrigger: {
-            scroller: ".img-container-trigger",
-            trigger: "#complete-end-trigger",
+            scroller: ".sm-img-container-trigger",
+            trigger: "#sm-complete-end-trigger",
             start: "top -10%",
             end: "bottom center",
             scrub: 1,
@@ -195,8 +201,8 @@ if (gsap) {
             pin: true
         },
         onStart: () => {
-            gsap.to("#background-img", {
-                width: "90%"
+            gsap.to(".sm-img-container", {
+                width: "88vw"
             })
         }
     })
