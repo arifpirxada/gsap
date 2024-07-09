@@ -11,8 +11,8 @@
     position: relative;
     height: 85vh;
     overflow: hidden;
-    /* display: none; */
-    display: flex;
+    display: none;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -33,30 +33,26 @@
 }
 
 .sm-message {
-    font-size: 1.5rem;
+    font-size: 1.3rem !important;
     display: none;
-    width: 80vw !important;
+    width: 65vw !important;
     text-shadow: -16px 6px 15px #000000;
 }
 
-/* #sm-second-message {
-    width: 80vw;
+#sm-second-message {
+    top: 27%;
 }
 
-#sm-third-message {
-    width: 18rem;
-    top: 23%;
-    left: 50%;
-}
-
-#sm-fourth-message {
-    width: 23rem;
-    top: 33%;
-    right: 10%;
+/* #sm-third-message {
+    bottom: 32%;
 } */
 
+#sm-fourth-message {
+    top: 14%;
+}
+
 .sm-img-container-trigger {
-    width: 100vw;
+    width: 120vw;
     height: 85vh;
     position: absolute;
     overflow-y: scroll;
@@ -82,9 +78,8 @@
 
 .sm-img-container img{
     position: absolute;
-    /* width: 150%; */
-    transform: translateX(12%);
-    top: 0;
+    transform: translateX(30%) scale(1.2);
+    top: 10%;
     height: 100%;
 }
 

@@ -15,11 +15,9 @@ html {
     width: 100vw;
     position: relative;
     height: 51.5vw;
-    /* height: 44.5vw; */
     overflow: hidden;
-    display: none;
-
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -77,7 +75,7 @@ html {
 } */
 
 .img-container-trigger {
-    width: 100vw;
+    width: 110vw;
     height: 51.5vw;
     position: absolute;
     overflow-y: scroll;
