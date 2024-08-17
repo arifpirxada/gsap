@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svg line animation</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #111b27;
+    }
+
+    .svg-container {
+        /* background-color: yellow; */
+        /* margin-top: 12rem; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .svg-container svg {
+        background-color: rgb(77, 144, 71);
+    } */
+    .content {
+        color: #ffffff;
+        font-family: cursive;
+        text-align: center;
+        transform: rotate(6deg);
+        opacity: 0;
+    }
+
+    .space {
+        height: 10rem;
+    }
+</style>
+
+<body>
+    <div class="svg-container">
+        <svg width="1500" height="400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 200 Q 700 200 1490 200" stroke="#66CC00" stroke-width="2" fill="transparent" />
+        </svg>
+    </div>
+
+    <div class="second-svg-container">
+        <h1 class="content">Gsap line Animation</h1>
+        <svg width="1500" height="400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 80 Q 0 10, 0 80 T 10 80" stroke="#F269DB" stroke-width="2" fill="transparent"/>
+        </svg>
+    </div>
+
+
+    <div class="space"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+
+    <script defer>
+        gsap.registerPlugin(ScrollTrigger);
+        let path = "M 10 200 Q 700 200 1490 200";
+        let initialPath = "M 10 200 Q 700 200 1490 200";
+
+        document.querySelector(".svg-container").addEventListener("mousemove", (e) => {
+            path = `M 10 200 Q ${e.x} ${e.y} 1490 200`;
+            gsap.to(".svg-container svg path", {
+                attr: { d: path },
+                duration: 0.2
+            })
+        })
+        document.querySelector(".svg-container").addEventListener("mouseleave", (e) => {
+            gsap.to(".svg-container svg path", {
+                attr: { d: initialPath },
+                duration: 0.2,
+                ease: "elastic.out(1,0.1)",
+                duration: 2
+            })
+        })
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".second-svg-container",
+                scroller: "body",
+                start: "top 50%",
+                end: "top 20%",
+                scrub: 1
+            }
+        })
+
+        tl.to(".second-svg-container svg path", {
+            attr: { d: "M 10 80 Q 152.5 10, 595 80 T 1480 80" },
+        })
+        .to(".content", {
+            y: 30,
+            opacity: 1
+        }, ">")
+
+    </script>
+
+</body>
+
+</html>
