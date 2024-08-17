@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.sm-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sm-img-container {
+    top: 80vw;
+    width: 110vw;
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 20px; */
+}
+
+.sm-img-container h1 {
+    color: #ffffff;
+    z-index: 500;
+    position: absolute;
+    font-size: 1.8rem;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    width: 30rem;
+    text-shadow: -16px 6px 15px #000000;
+    text-align: center;
+}
+
+.sm-message {
+    font-size: 1.3rem !important;
+    display: none;
+    width: 65vw !important;
+    text-shadow: -16px 6px 15px #000000;
+}
+
+#sm-second-message {
+    top: 27%;
+}
+
+/* #sm-third-message {
+    bottom: 32%;
+} */
+
+#sm-fourth-message {
+    top: 14%;
+}
+
+.sm-img-container-trigger {
+    width: 120vw;
+    height: 85vh;
+    position: absolute;
+    overflow-y: scroll;
+    z-index: 600;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.sm-bottom-space {
+    height: 300rem;
+    width: 100vw;
+}
+
+.sm-img-container-trigger p{
+    opacity: 0;
+    color: #ffffff;
+}
+
+.sm-message-trigger {
+    height: 20rem;
+    margin-bottom: 5rem;
+}
+
+.sm-img-container img{
+    position: absolute;
+    transform: translateX(30%) scale(1.2);
+    top: 10%;
+    height: 100%;
+}
+
+.sm-shadow {
+    background-color: rgba(0, 0, 0, 0.56);
+    position: relative;
+    width: 420%;
+    margin-left: -15vw;
+    height: 400%;
+    /* border-radius: 50%; */
+    border-radius: 30%;
+    box-shadow: rgba(0, 0, 0, 0.56) -120px -15px 43px 18px;;
+    z-index: 100;
+}
